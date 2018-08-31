@@ -17,6 +17,7 @@ Class LoginController extends CI_Controller
         }
         else
         {
+            $this->set_session($this->input->post("username"));
             redirect("HomeController/index");
         }
     }
@@ -35,5 +36,20 @@ Class LoginController extends CI_Controller
             $this->form_validation->set_message('verifyUser', 'Incorrect username or password');
             return FALSE;
         }
+    }
+    public function set_session($USERNAME)
+    {
+        $SQL = "SELECT * from user where username='".$USERNAME."'";
+        $RESULT = $this->db->query($SQL);
+        $ROW = $RESULT->row();
+        
+        $SESS_DATA = array(
+            'userid'=>$ROW->id,
+            'username'=>$ROW->username,
+            'firstname'=>$ROW->first_name,
+            'lastname'=>$ROW->last_name,
+            'user_type'=>$ROW->user_type
+        );
+        $this->session->set_userData($SESS_DATA);
     }
 }

@@ -14,7 +14,7 @@
 <h1>Book My Parking</h1></center>
 <center><h2>City of Regina</h2>
     </center>
-    <?php echo validation_errors(); 
+    <?php echo "<font color='red' style='text-align: center;'>".validation_errors()."</font>"; 
     echo form_open("LoginController/checkLogin", "class='box login'");
     ?>
     
