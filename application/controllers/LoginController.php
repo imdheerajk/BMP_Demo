@@ -18,7 +18,7 @@ Class LoginController extends CI_Controller
         else
         {
             $this->set_session($this->input->post("username"));
-            redirect("HomeController/index");
+            redirect("Home/index");
         }
     }
     public function verifyUser()
@@ -50,6 +50,6 @@ Class LoginController extends CI_Controller
             'lastname'=>$ROW->last_name,
             'user_type'=>$ROW->user_type
         );
-        $this->session->set_userData($SESS_DATA);
+        $this->session->set_userData("looged_in", $SESS_DATA);
     }
 }
