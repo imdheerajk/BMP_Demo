@@ -34,7 +34,7 @@ function initMap() {
           content: contentString
         });
         var icon = {
-    url: "images/logo_bmp.png", // url
+    url: "<?php echo base_url(); ?>images/logo_bmp.png", // url
     scaledSize: new google.maps.Size(50, 60) // scaled size
     
 };

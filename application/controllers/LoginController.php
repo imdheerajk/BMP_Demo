@@ -50,6 +50,14 @@ Class LoginController extends CI_Controller
             'lastname'=>$ROW->last_name,
             'user_type'=>$ROW->user_type
         );
-        $this->session->set_userData("looged_in", $SESS_DATA);
+        $this->session->set_userdata($SESS_DATA);
+    }
+    public function logoutuser()
+    {
+        //$USER_ID = $this->session->userdata('userid');
+        $this->session->unset_userdata();
+        $this->session->sess_destroy();
+        redirect('LoginController');
+        
     }
 }

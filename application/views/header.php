@@ -13,7 +13,7 @@
 
 <link href="<?php echo base_url(); ?>css/style.css" rel="stylesheet">
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <!--<link href="<?php echo base_url(); ?>font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">-->
  <div id="wrapper"style="background-color: #ffffff" >
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #ffffff" >
             <!-- Brand and toggle get grouped for better mobile display -->
@@ -35,8 +35,10 @@
                 <li class="dropdown">
                     <a style="color: #000" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 
                                             <?php
-                                            $USERNAME = $this->session->userData('firstname');
-                                            echo ;
+                                            
+                                            $FIRSTNAME = $this->session->userdata('firstname');
+                                            $LASTNAME =  $this->session->userdata('lastname');
+                                           echo $FIRSTNAME." ".$LASTNAME;
                                             
                                             ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
@@ -51,7 +53,7 @@
                         </li>
                         <li class="divider"></li>
                         <li>
-                            <a href="logout.php"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                            <a href="<?php echo base_url('LoginController/logoutuser'); ?>"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
                         </li>
                     </ul>
                 </li>
@@ -85,9 +87,9 @@
                                         </li>
                                         
                                     </ul>-->
-<li class="<?php //echo $c ?>"  ><a href="contact_us.php"><strong>Contact Us</strong></a>
+<li class="<?php //echo $c ?>"  ><a href="<?php echo base_url(); ?>Home/ContactUs"><strong>Contact Us</strong></a>
                                 </li>
-                                <li class="<?php //echo $d ?>"  ><a href="about_us.php"><strong>About Us</strong></a>
+                                <li class="<?php //echo $d ?>"  ><a href="<?php echo base_url(); ?>Home/AboutUs"><strong>About Us</strong></a>
                                 </li>
 <!--                                <li class="<?php //echo $d ?>"  ><a href="view_work.php"><strong>View Work</strong></a>
                                 </li>-->
@@ -214,7 +216,7 @@ $(window).scroll(function() {
 		$('a.back-to-top').fadeOut('slow');
 	}
 });
-
+//background: #27AE61 url("<?php echo base_url(); ?>img/up-arrow.png") no-repeat center 43%;
 $('a.back-to-top, a.simple-back-to-top').click(function() {
 	$('body').animate({
 		scrollTop: 0
