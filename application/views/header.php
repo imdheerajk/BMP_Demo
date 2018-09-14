@@ -35,8 +35,8 @@
                 <li class="dropdown">
                     <a style="color: #000" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i> 
                                             <?php
-                                            
-                                            echo $this->session->userData('firstname');
+                                            $USERNAME = $this->session->userData('firstname');
+                                            echo ;
                                             
                                             ?> <b class="caret"></b></a>
                     <ul class="dropdown-menu">
