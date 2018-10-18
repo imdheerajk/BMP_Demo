@@ -1,0 +1,256 @@
+<?php
+if(isset($_POST['gen_report']))
+{
+        if($_POST['report_type']=="Balance")
+        {
+		echo '<script language="javascript">document.location.href="balance.php?report_type='.$_POST['asset'].'";</script>';
+	}
+        if($_POST['report_type']=="Detailed Balance")
+	{
+		echo '<script language="javascript">document.location.href="detailedBalance.php?report_type='.$_POST['asset'].'&s_date='.$_POST['report_start_dt'].'&e_date='.$_POST['report_end_dt'].'";</script>';
+	}		
+	if($_POST['report_type']=="XYZ")
+	{
+		echo '<script language="javascript">document.location.href="xyzReportMain.php?report_type='.$_POST['vehicle'].'&vehicleFirst='.$_POST['vehicleFirst'].'&vehicleSecond='.$_POST['vehicleSecond'].'&noHubs='.$_POST['txtNoHab'].'&xyzreport_select_dt='.$_POST['xyzreport_select_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Distance")
+	{
+		echo '<script language="javascript">document.location.href="distance_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Total Distance")
+	{
+		echo '<script language="javascript">document.location.href="missing_distance_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Ignition")
+	{
+		echo '<script language="javascript">document.location.href="ignition_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}if($_POST['report_type']=="Ignition New")
+	{
+		echo '<script language="javascript">document.location.href="ignition_report_new.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}if($_POST['report_type']=="Ignition Off Location")
+	{
+		echo '<script language="javascript">document.location.href="ignition_off_location_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Stoppag")
+	{
+		echo '<script language="javascript">document.location.href="stoppage_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Speed Violation")
+	{
+		echo '<script language="javascript">document.location.href="speed_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&speed_kmh=' . $_POST['speedkmhr'] . '";</script>';
+	}
+	if($_POST['report_type']=="Vehicle Performance")
+	{
+		echo '<script language="javascript">document.location.href="vehicle_report.php?select_dt='.$_POST['report_select_dt'] . '&speed_kmh=' . $_POST['speedkmhr'] . '";</script>';
+	}
+	if($_POST['report_type']=="History")
+	{
+		echo '<script language="javascript">document.location.href="test_live_history.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	
+	if($_POST['report_type']=="History Plot All")
+	{
+            echo '<script language="javascript">document.location.href="history_plot_all.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&duration='.$_POST['duration'].'";</script>';
+	}
+	
+	if($_POST['report_type']=="History(Time Duration)")
+	{
+		echo '<script language="javascript">document.location.href="test_live_history_time_duration.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'";</script>';
+	}
+	if($_POST['report_type']=="History(Draggable)")
+	{
+		echo '<script language="javascript">document.location.href="draggable_history.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Polylines")
+	{
+		echo '<script language="javascript">document.location.href="polylines.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+###########################################			   SHOW RAWDATA			  ##############################################
+	if($_POST['report_type']=="rawdata")
+	{
+		echo '<script language="javascript">document.location.href="show_rawdata.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Temperature Sensor")
+	{
+		echo '<script language="javascript">document.location.href="temprature_sensor.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'&type='.$_POST['temp_type'].'";</script>';
+	}
+
+	if($_POST['report_type']=="Temperature")
+	{
+		echo '<script language="javascript">document.location.href="acg_temperature_sensor.php.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'&type='.$_POST['temp_type'].'";</script>';
+	}
+
+	if($_POST['report_type']=="Temperature Report")
+	{
+		echo '<script language="javascript">document.location.href="temprature_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'&type='.$_POST['temp_type'].'";</script>';
+	}
+	if($_POST['report_type']=="Detail Tracking")
+	{
+		echo '<script language="javascript">document.location.href="detail_tracking_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'";</script>';
+	}
+	if($_POST['report_type']=="AC Compressor")
+	{
+		echo '<script language="javascript">document.location.href="ac_compressor_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Compressor Status")
+	{
+		echo '<script language="javascript">document.location.href="compressor_status_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'";</script>';
+	}
+	if($_POST['report_type']=="Fuel Report")
+	{
+		echo '<script language="javascript">document.location.href="fuel_lineGraph.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+#############################################################################################################################
+	if($_POST['report_type']=="Detail History")
+	{
+		echo '<script language="javascript">document.location.href="vehicle_history_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&mode='.$_POST['duration'].'";</script>';
+	}
+	if($_POST['report_type']=="Geo Fencing")
+	{
+		echo '<script language="javascript">document.location.href="geo_fencing_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&area='.$_POST['area_drp'].'&geo_asset_type='.$_POST['geo_asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Depot Report")
+	{
+		if($_POST['poi_asset']=='0')
+		{
+			echo '<script language="javascript">document.location.href="depot_report_all.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&poi='.$_POST['poi_drp'].'&poi_asset_type='.$_POST['poi_asset'].'";</script>';
+		}
+		else 
+		{
+			echo '<script language="javascript">document.location.href="depot_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&poi='.$_POST['poi_drp'].'&poi_asset_type='.$_POST['poi_asset'].'";</script>';
+		}
+	}
+	/*if($_POST['report_type']=="Fuel" && $_POST['fuel_asset']!='')
+	{
+		echo '<script language="javascript">document.location.href="fuel_report.php?select_dt='.$_POST['report_select_dt'] . '&fuel_sel_ast='.$_POST['fuel_asset'].'";</script>';
+	}*/
+	if($_POST['report_type']=="Fuel" && $_POST['fuel_asset']!='')
+	{
+		echo '<script language="javascript">document.location.href="fuel_detail_report.php?report_dt='.$_POST['report_select_dt'] . '&fuel_sel_ast='.$_POST['fuel_asset'].'";</script>';
+	}		
+	/***** AC REPORT ****/
+	if($_POST['report_type']=="AC")
+	{
+		echo '<script language="javascript">document.location.href="test_ac_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Service Due")
+        {
+######################## 	Generate SERVECE DUE, INSURANCE DUE, REGISTRATION DUE REPORT (PRADEEP)		#########################
+		echo '<script language="javascript">document.location.href="serviceDue.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Insurance Due")
+        {
+		echo '<script language="javascript">document.location.href="insuranceDue.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Registration Due")
+        {
+		echo '<script language="javascript">document.location.href="registrationDue.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Fitness Due")
+        {
+		echo '<script language="javascript">document.location.href="fitnessDue.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="National Permit Due")
+        {
+		echo '<script language="javascript">document.location.href="national_permitDue.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="State Permit Due")
+        {
+		echo '<script language="javascript">document.location.href="state_permitDue.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Idle Report")		// WHERE VEHICLE HAS STATUS 48 AND STOPPED
+        {
+		echo '<script language="javascript">document.location.href="idle_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&idle_time='.$_POST['idle_time'].'";</script>';
+	}
+	
+	if($_POST['report_type']=="Trip Details")
+	{
+		echo '<script language="javascript">document.location.href="trip-details.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&duration='.$_POST['duration'].'&duration1='.$_POST['duration1'].'&min_distance='.$_POST['min_distance'].'";</script>';
+	}
+	
+###########################################			   SHOW RAW DISTANCE		  ##############################################
+	if($_POST['report_type']=="rawdistance")
+	{
+		echo '<script language="javascript">document.location.href="raw_distance_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	
+	if($_POST['report_type']=="Compactor Details")
+	{
+		echo '<script language="javascript">document.location.href="compactor_details.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	
+	if($_POST['report_type']=="Compactor Details Map")
+	{
+		echo '<script language="javascript">document.location.href="compactor_map-details.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	
+	if($_POST['report_type']=="Compactor Tracking")
+	{
+		echo '<script language="javascript">document.location.href="compactor-tracking.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+#############################################################################################################################
+#################			WONDERS REPORTS				#######################
+	if($_POST['report_type']=="Day Wise Travel")
+	{
+		echo '<script language="javascript">document.location.href="day-wise_travel.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'";</script>';
+	}
+	if($_POST['report_type']=="Idle")
+	{
+		echo '<script language="javascript">document.location.href="idle-report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&asset_type='.$_POST['asset'].'&duration='.$_POST['duration'].'";</script>';
+	}
+	if($_POST['report_type']=="Driver Wise Travel")
+	{
+		echo '<script language="javascript">document.location.href="driver-wise_travel.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&driver='.$_POST['driver_option'].'";</script>';
+	}
+	if($_POST['report_type']=="Fleet Summary")
+	{
+		echo '<script language="javascript">document.location.href="fleet_summary.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Stopage")
+	{
+		echo '<script language="javascript">document.location.href="stoppage-report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&duration='.$_POST['duration'].'";</script>';
+	}
+	if($_POST['report_type']=="Day Summary")
+	{
+		echo '<script language="javascript">document.location.href="day-summary.php?select_dt='.$_POST['report_select_dt'].'";</script>';
+	}
+	if($_POST['report_type']=="Summary")
+	{
+		echo '<script language="javascript">document.location.href="summary.php?select_dt='.$_POST['report_select_dt'].'";</script>';
+	}
+        if($_POST['report_type']=="Route Violation")
+        {
+                echo '<script language="javascript">document.location.href="route_violation.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Route Violation";</script>';
+        }	
+        if($_POST['report_type']=="Non-dedicated Installation")
+        {
+                echo '<script language="javascript">document.location.href="non-dedicated_installation.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Non-dedicated Installation";</script>';
+        }	
+        if($_POST['report_type']=="Mobilization")
+        {
+                echo '<script language="javascript">document.location.href="mobilization_immobilization_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Mobilization";</script>';
+        }	
+        if($_POST['report_type']=="Immobilization")
+        {
+                echo '<script language="javascript">document.location.href="mobilization_immobilization_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Immobilization";</script>';
+        }		
+        if($_POST['report_type']=="Speed Limit")
+        {
+                echo '<script language="javascript">document.location.href="speed_limit_exceed.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Speed Limit";</script>';
+        }		
+        if($_POST['report_type']=="Coal TAT")
+        {
+                echo '<script language="javascript">document.location.href="coal_tat_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Coal TAT";</script>';
+        }	        		
+        if($_POST['report_type']=="Coal Trip")
+        {
+                echo '<script language="javascript">document.location.href="coal_trip_report.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Coal Trip";</script>';
+        }
+        if($_POST['report_type']=="Device Tampering")
+        {
+                echo '<script language="javascript">document.location.href="device_tampering.php?start_dt='.$_POST['report_start_dt'].'&end_dt='.$_POST['report_end_dt'].'&report=Device Tampering";</script>';
+        }		
+###############################################################################
+}  
+?>
+

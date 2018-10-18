@@ -152,7 +152,7 @@
 .ajax_loader
 {
     background-size: 25px;
-    background-image: url('images/green_loader.gif');
+    background-image: url('../img/green_loader.gif');
     background-repeat: no-repeat;
     background-position: 98% 46%;
 }
@@ -208,7 +208,7 @@ a.back-to-top {
 	z-index: 999;
 	right: 20px;
 	bottom: 20px;
-	background: #27AE61 url("images/up-arrow.png") no-repeat center 43%;
+	background: #27AE61 url("../img/up-arrow.png") no-repeat center 43%;
 	-webkit-border-radius: 30px;
 	-moz-border-radius: 30px;
 	border-radius: 30px;
